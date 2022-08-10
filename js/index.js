@@ -11,4 +11,18 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
+   
+    
+    let user = localStorage.getItem('usuario')
+    document.getElementById("floatingInput").innerHTML= user; 
+
 });
+if (user == null){
+    alert ('Ingresa con tu Usuario');
+    location.href="login.html"};
+
+function cerrar (){
+ localStorage.removeItem('usuario')  ;
+ alert ('Cerrando Sesión');
+ location.her ="index.html" 
+}
