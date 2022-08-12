@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
    
     
     let user = localStorage.getItem('usuario')
-    document.getElementById("floatingInput").innerHTML= user; 
+    document.getElementById("floatingInput").innerHTML=user; 
 
 });
 if (user == null){
@@ -24,5 +24,5 @@ if (user == null){
 function cerrar (){
  localStorage.removeItem('usuario')  ;
  alert ('Cerrando Sesión');
- location.her ="index.html" 
+ location.href="index.html" 
 }

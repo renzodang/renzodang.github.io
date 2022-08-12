@@ -1,17 +1,61 @@
 
-main{
-block-size: 250px;
-  justify-content:center;
-  justify-items: center;
-  margin: 50px;
-  margin-left: 250px;
+body{
+  text-align: center;
+  justify-content: center;
+  color:black;
+  border: solid lightcyan 10px;
+}
+#welcome {
+  font-style: italic;
+  font-size:medium;
+  background-color: lightcyan;
+}
+#init{
+  font-style:oblique;
+  font-variant-position: sub;
+} 
+#record {
+  border: solid lightcyan 10px;
+  margin: -2px;
   
+ 
+}
+#Ingreso{ 
+  color: black;
+  border: solid black 2px;
+  font-size: larger;
+
+}
+#form-group{
+  
+  block-size: 150px;
+  
+    border: solid lightcyan 50px;
+  
+    
+  
+     }
+  #text-muted2 {
+    
+ 
+    position: absolute;
+    display: flex ;
+    margin-top:  700px;
+    padding: 10px;
 
    }
-.container {
-   margin-top: 500px;
-   margin-left: 1px;
-  
+   #site {
+ 
+   padding-right: 300px;
    
+   }
+   #link {
+   
+    text-align: center;
+   }
+   .float-end{
+    position: absolute;
+    padding-left: 500px;
+   }
 
- }
+  

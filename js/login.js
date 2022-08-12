@@ -7,13 +7,21 @@ if (user !== "" && password!== "") {
     location.href="index.html";
 }else  {
     alert('Ingresar Correo y Contraseña');
-}
+};
+};
 
-
-}
+function recordar (){
+    localStorage.setItem('pass',password);
+   
+        
+};
 
 document.addEventListener('DOMContentLoaded',()=>{
     document.getElementById("Ingreso").addEventListener('click',()=>{
-        login();
+        login(); 
+     });
+
+        document.getElementById("record").addEventListener('onclick',()=>{
+           recordar () ;
+        });
     });
-});
