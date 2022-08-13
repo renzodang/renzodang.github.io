@@ -3,11 +3,12 @@ let direccion = "https://japceibal.github.io/emercado-api/cats_products/101.json
 let categoriesArray = [];
 
 
-function showCategoriesList(auto){
+
+function showCategoriesList(array){
     let htmlContentToAppend = "";
 
 
-    for(let i = 0; i < auto.products.length; i++){ 
+    for(let i = 0; i < array.products.length; i++){ 
         let auto = array.products[i];
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
@@ -18,10 +19,10 @@ function showCategoriesList(auto){
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
-                        <h4>`+ auto.name +`</h4> 
-                        <p> `+ auto.description +`</p> 
+                        <h4><strong> `+ auto.name +`</strong> </h4> 
+                        <p>`+ auto.description +`</p> 
                         </div>
-                        <small class="text-muted">` + auto.productCount + ` artículos</small> 
+                        <small class="text-muted">` + auto.soldCount + ` Artículos Vendidos</small> 
                     </div>
 
                 </div>
