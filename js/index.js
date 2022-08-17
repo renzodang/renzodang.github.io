@@ -8,7 +8,7 @@ function logear() {
 }
 function cerrar() {
   alert("Cerraste Sesión");
-  localStorage.clear;
+  localStorage.clear();
   location.href = "login.html";
 }
 
