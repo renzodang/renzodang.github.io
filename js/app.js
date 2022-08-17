@@ -20,6 +20,7 @@ function showCategoriesList(array){
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
                         <h4><strong> `+ auto.name +`</strong> </h4> 
+                        <h4><strong> $`+ auto.cost +`</strong> </h4> 
                         <p>`+ auto.description +`</p> 
                         </div>
                         <small class="text-muted">` + auto.soldCount + ` Artículos Vendidos</small> 

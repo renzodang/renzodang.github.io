@@ -1,27 +1,23 @@
 function login (){
-    let user = document.getElementById("floatingInput").value;
-    let password = document.getElementById("floatingPassword").value;
+   let user = {}
+    user.name = document.getElementById("floatingInput").value;
+    user.pass = document.getElementById("floatingPassword").value;
+    user.perm = document.getElementById("record").checked ;
 
-if (user !== "" && password!== "") {
-    localStorage.setItem('user',user);
-    location.href="index.html";
-}else  {
-    alert('Ingresar Correo y Contraseña');
+  if (user.name === "" || user.pass === ""){
+   alert ('Para continuar debe ingresar nombre y contraseña');
+} else if (user.perm === false){
+    localStorage.setItem('item',JSON.stringify(user.name))
+    location.href = "index.html";
+} else if(user.perm === true){
+    localStorage.setItem('item',JSON.stringify(user))
+    location.href = "index.html";     
 };
-};
-
-function recordar (){
-    localStorage.setItem('pass',password);
-   
-        
 };
 
 document.addEventListener('DOMContentLoaded',()=>{
     document.getElementById("Ingreso").addEventListener('click',()=>{
         login(); 
      });
-
-        document.getElementById("record").addEventListener('onclick',()=>{
-           recordar () ;
-        });
     });
+
