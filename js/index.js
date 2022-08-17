@@ -1,4 +1,4 @@
-let user = JSON.parse(getItem.localStorage("item"));
+let user = JSON.parse(localStorage.getItem('item'));
 
 function logear() {
   if (user == null) {
@@ -29,9 +29,5 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("close").addEventListener("click", function () {
     cerrar();
   });
-  document.getElementById("init").addEventListener("click", function () {
-    window.location = "login.html";
-  });
 
-  document.getElementById("floatingInput").innerHTML = user;
 });
