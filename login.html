@@ -42,8 +42,7 @@
       <button id="Ingreso">Ingresar </button>
     </div>
     <br>
-    <h6>Tambien Puedes accer con tu cuenta de Google</h6>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -62,6 +61,7 @@
         console.log("ID Token: " + id_token);
       }
     </script>
+    <h6>Tambien puedes Ingresar con tu cuenta de Google</h6>
   </main>
 
   <footer class="text-muted" id ="text-muted2">

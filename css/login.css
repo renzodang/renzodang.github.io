@@ -59,10 +59,14 @@ body{
    }
    .g-signin2{
     position: absolute;
-    padding-top: 310px;
-    padding-left: 165px;
-
-   }
+     margin-top: 370px;
+     margin-left: 165px;
  
+   }
+ h6 {
+  margin-top: 320px;
+  font-style: italic;
+
+ }
 
   
