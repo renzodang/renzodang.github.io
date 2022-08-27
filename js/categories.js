@@ -4,7 +4,7 @@ const ORDER_BY_PROD_COUNT = "Cant.";
 let currentCategoriesArray = [];
 let currentSortCriteria = undefined;
 let minCount = undefined;
-let maxCount = undefined;
+let maxCount= undefined;
 
 function sortCategories(criteria, array){
     let result = [];
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok"){
             currentCategoriesArray = resultObj.data
             showCategoriesList()
-            //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
+            sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
 

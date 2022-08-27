@@ -7,10 +7,10 @@ function login (){
   if (user.name === "" || user.pass === ""){
    alert ('Para continuar debe ingresar nombre y contraseña');
 } else if (user.perm === false){
-    localStorage.setItem('item',JSON.stringify(user.name))
+    localStorage.setItem('user',(user.name))
     location.href = "index.html";
 } else if(user.perm === true){
-    localStorage.setItem('item',JSON.stringify(user))
+    localStorage.setItem('pass',(user.pass))
     location.href = "index.html";     
 };
 };

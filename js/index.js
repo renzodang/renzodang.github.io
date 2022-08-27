@@ -1,9 +1,10 @@
-let user = JSON.parse(localStorage.getItem('item'));
+let user = localStorage.getItem('user');
 
 function logear() {
   if (user == null) {
     alert("Ingresa con tu Usuario");
-    location.href = "login.html";
+    location.href = "login.html";}else{
+    document.getElementById("profile").innerHTML= user
   }
 }
 function cerrar() {

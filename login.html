@@ -4,9 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="google-signin-scope" content="profile email">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>  
-  <meta name="google-signin-client_id" content="1002363311068-j6k44530i65ek4stnlt1pj36hcq3eomf.apps.googleusercontent.com">
+  
   <title>eMercado - Todo lo que busques está aquí</title>
   
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -42,25 +40,7 @@
       <button id="Ingreso">Ingresar </button>
     </div>
     <br>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-        localStorage.setItem ('user',profile.getName);
-        location.href = "index.html";
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
-    </script>
+    
     <h6>Tambien puedes Ingresar con tu cuenta de Google</h6>
   </main>
 
@@ -77,6 +57,7 @@
     </div>
   </footer>
   <script src="js/login.js"></script>
+
 </body>
 
 </html>
