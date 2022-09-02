@@ -32,7 +32,8 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" >
+            <a href ="index.html" id="profile" class="text-white" ></a>
           </li>
         </ul>
       </div>
@@ -48,15 +49,16 @@
     <hr>
     <div class="row">
       <div class="col text-end">
+        <h6>Ordenar Por</h6>
         <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+         
+        
           <input type="radio" class="btn-check" name="options" id="sortAsc">
-          <label class="btn btn-light" for="sortAsc">Mayor Relevancia</label>
+          <label class="btn btn-light" for="sortAsc" id="">Menor Precio</label>
           <input type="radio" class="btn-check" name="options" id="sortDesc">
-          <label class="btn btn-light" for="sortAsc" id="">Mayor Precio</label>
-          <input type="radio" class="btn-check" name="options" id="sortDesc">
-          <label class="btn btn-light" for="sortDesc">Menor Precio</label>
+          <label class="btn btn-light" for="sortDesc">Mayor Precio</label>
           <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
-          <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
+          <label class="btn btn-light" for="sortByCount">Mayor Relevancia </label>
         </div>
       </div>
     </div>
@@ -80,6 +82,8 @@
           </div>
         </div>
       </div>
+      <input type="search" id = "finder" class="form-control"> Buscar
+     
     </div>
     <div class="row">
       <div class="list-group" id="cat-list-container">

@@ -5,6 +5,7 @@ let currentCategoriesArray = [];
 let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount= undefined;
+let user = localStorage.getItem('user');
 
 function sortCategories(criteria, array){
     let result = [];
@@ -84,6 +85,15 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
     showCategoriesList();
 }
 
+function logear() {
+    if (user == null) {
+      alert("Ingresa con tu Usuario");
+      location.href = "login.html";}
+      else{
+      document.getElementById("profile").innerHTML= user
+    }
+  }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -96,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
+    logear();
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowCategories(ORDER_ASC_BY_NAME);
     });

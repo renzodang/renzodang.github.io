@@ -1,9 +1,10 @@
 let user = localStorage.getItem('user');
 
-function logear() {
+function login() {
   if (user == null) {
     alert("Ingresa con tu Usuario");
-    location.href = "login.html";}else{
+    location.href = "login.html";}
+    else{
     document.getElementById("profile").innerHTML= user
   }
 }
@@ -14,7 +15,7 @@ function cerrar() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  logear();
+  login();
   document.getElementById("autos").addEventListener("click", function () {
     localStorage.setItem("catID", 101);
     window.location = "products.html";
