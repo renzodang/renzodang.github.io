@@ -2,6 +2,10 @@
 let articles = [];
 let user = localStorage.getItem('user');
 
+function setArtID(id) {
+    localStorage.setItem("artID",id);
+    window.location = "product-info.html";
+}
 
 
 function display(array){
@@ -10,28 +14,31 @@ function display(array){
         let product = array[i];
         
         htmlContentToAppend += `
+        <div onclick="setArtID(${product.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src= "` + product.image + `" alt="product image" class="img-thumbnail">
+                
+                    <img src= " ${product.image}" alt="product image" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
-                        <h4><strong> `+ product.name +`</strong> </h4> 
-                        <h4><strong> $`+ product.cost + product.currency+`</strong> </h4> 
-                        <p>`+ product.description +`</p> 
+                        <h4><strong>  ${product.name} </strong> </h4> 
+                        <h4><strong>  ${product.currency}${product.cost}</strong> </h4> 
+                        <p> ${product.description}</p> 
                         </div>
-                        <small class="text-muted">` + product.soldCount + ` Artículos Vendidos</small> 
+                        <small class="text-muted">${product.soldCount}  Artículos Vendidos</small>
+                
                     </div>
                 </div>
             </div>
         </div>
         `
       
-}
 
-document.getElementById("prod").innerHTML = htmlContentToAppend; 
+}
+document.getElementById("prod").innerHTML = htmlContentToAppend;
 }
 
 function login() {
@@ -41,7 +48,7 @@ function login() {
       else{
       document.getElementById("profile").innerHTML= user
     }
-  }
+  };
   
   function FilterList(list){
     
@@ -68,7 +75,7 @@ function SortByCostDesc(array){
             if ( a.cost < b.cost ){ return 1; }
             return -1;
         });
-    }
+    };
 function SortByRelev(array){
  
         result = array.sort(function(a, b) {
@@ -82,13 +89,16 @@ function SortByRelev(array){
     function FindArticle (articles){
         let setting =document.getElementById("finder").value;
        let result = articles.find(article => article.name.includes(setting))
-    console.log (result);
+  
     if(setting === ""){
         display(articles)
     }else {
+        
        display(result);
     }
 }
+
+
 
 document.addEventListener("DOMContentLoaded",()=> {
     
@@ -109,7 +119,7 @@ document.getElementById('sortAsc').addEventListener('click',()=>{
     SortByCostAsc(articles);
     display(articles);
 });
-document.getElementById('sortDesc').addEventListener('click',()=>{
+document.getElementById('sortDesc').addEventListener('click',()=>{s
     SortByCostDesc(articles);
     display(articles);
 });
@@ -119,8 +129,8 @@ document.getElementById('sortByCount').addEventListener('click',()=>{
 });
 document.getElementById('finder').addEventListener('input',()=>{
     FindArticle(articles);
+    display(articles)
    
-
 });
 
 document.getElementById("clearRangeFilter").addEventListener("click", function(){
