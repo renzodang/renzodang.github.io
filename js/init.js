@@ -16,15 +16,27 @@ let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-
-
-
-document.addEventListener("DOMContentLoaded",()=> {
-    
-  getJSONData(PRODUCTS_URL+localStorage.getItem('catID')+".json").then(function(resultObj){
-      if (resultObj.status === "ok")
-      {
-          articles = resultObj.data.products;     
-          display(articles);
-      } 
-  });
+let getJSONData = function(url){
+    let result = {};
+    showSpinner();
+    return fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }else{
+        throw Error(response.statusText);
+      }
+    })
+    .then(function(response) {
+          result.status = 'ok';
+          result.data = response;
+          hideSpinner();
+          return result;
+    })
+    .catch(function(error) {
+        result.status = 'error';
+        result.data = error;
+        hideSpinner();
+        return result;
+    });
+}
