@@ -11,6 +11,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/article.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   
 </head>
 
@@ -40,14 +42,23 @@
   </nav>
   <main>
     <div id="prod" class="container">
-
     </div> 
-    <div id ="com" class="container">
-      
-    </div>
+    <br>
+    <div id ="comment" class="container">
+   </div>
  
-    </div>
+  <div  id = "newcomment" class="container" >
+    <div class="list-group-item-primary ">
+   <span class=""><h2 id="comentar">Comentar:</h2></span>
+    <textarea rows="4" cols="50" id="newcom" placeholder="Agregar Comentario...." class="form-control" ></textarea>
+    <input id="puntaje" type="number" max="5" min="0" placeholder="Pts." >
+    <br>
+    <button type="button" id="send" >Enviar</button>
+   </div>
+  </div>
   </main>
+  <br>
+  <br>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

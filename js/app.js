@@ -1,11 +1,21 @@
 
 let articles = [];
 let user = localStorage.getItem('user');
+function login() {
+    if (user == null) {
+      alert("Ingresa con tu Usuario");
+      location.href = "login.html";
+    }
+      else{
+      document.getElementById("profile").innerHTML= user;
+    }
+  };
+
 
 function setArtID(id) {
     localStorage.setItem("artID",id);
     window.location = "product-info.html";
-}
+};
 
 
 function display(array){
@@ -14,8 +24,7 @@ function display(array){
         let product = array[i];
         
         htmlContentToAppend += `
-        <div onclick="setArtID(${product.id})" class="list-group-item list-group-item-action cursor-active">
-        <div class="list-group-item list-group-item-action">
+        <div onclick="setArtID(${product.id})" class=" list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                 
@@ -23,34 +32,38 @@ function display(array){
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <div class="mb-1">
-                        <h4><strong>  ${product.name} </strong> </h4> 
-                        <h4><strong>  ${product.currency}${product.cost}</strong> </h4> 
-                        <p> ${product.description}</p> 
+                        <div>
+                        <h4 class="mb-1"><strong>  ${product.name} </strong> </h4> 
+                        <h4 class = "mb-1"><strong>  ${product.currency}${product.cost}</strong> </h4> 
+                        <p class = "mb-1"> ${product.description}</p> 
                         </div>
                         <small class="text-muted">${product.soldCount}  Artículos Vendidos</small>
-                
+            
                     </div>
                 </div>
             </div>
-        </div>
+    
+        <br>
         `
+        
       
 
 }
-document.getElementById("prod").innerHTML = htmlContentToAppend;
+document.getElementById("prod").innerHTML = htmlContentToAppend + "<br>";
 }
+
 
 function login() {
     if (user == null) {
       alert("Ingresa con tu Usuario");
-      location.href = "login.html";}
+      location.href = "login.html";
+    }
       else{
-      document.getElementById("profile").innerHTML= user
+      document.getElementById("profile").innerHTML= user;
     }
   };
   
-  function FilterList(list){
+  function FilterList(articles){
     
 let Min = parseInt(document.getElementById('rangeFilterCostMin').value);
 let Max = parseInt(document.getElementById('rangeFilterCostMax').value);
@@ -58,16 +71,9 @@ let FList = articles.filter(article => article.cost >= Min && article.cost <= Ma
 FList.sort((a,b)=>a.cost-b.cost);
 console.log (FList);
 display(FList);
-}
+};
     
-function SortByCostAsc(array){
-        result = array.sort(function(a, b) {
-            if ( a.cost < b.cost ){ return -1; }
-            if ( a.cost > b.cost ){ return 1; }
-            return 1;
-        });
-      
-    };
+
 
 function SortByCostDesc(array){ 
         result = array.sort(function(a, b) {
@@ -84,7 +90,7 @@ function SortByRelev(array){
             if ( a.soldCount < b.soldCount ){ return 1; }
             return 0;
         });
-    }
+    };
 
     function FindArticle (articles){
         let setting =document.getElementById("finder").value;
@@ -96,7 +102,7 @@ function SortByRelev(array){
         
        display(result);
     }
-}
+};
 
 
 
@@ -139,3 +145,9 @@ document.getElementById("clearRangeFilter").addEventListener("click", function()
     display(articles);
 });
 });
+
+
+
+
+
+

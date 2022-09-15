@@ -11,10 +11,10 @@ function display(product){
     let htmlContentToAppend = "";
         htmlContentToAppend += `
        
-        <div class="list-group-item list-group-item-action">
+        <div class="list-group-item list-group-item">
         
             <div class="row">
-                <div class="col-3">
+                <div class="col-md-2">
                     <img src= " ${product.images[0]}" alt="product image" class="img-thumbnail">
                     <img src= " ${product.images[1]}" alt="product image" class="img-thumbnail">
                     <img src= " ${product.images[2]}" alt="product image" class="img-thumbnail">
@@ -31,17 +31,7 @@ function display(product){
                         <p class="text-muted">${product.soldCount}  Artículos Vendidos</p>
                         </div>
                         </div>
-                        
-                    
-                      
-                        <div id= "prevcom"
                         </div>
-                        <div class = "mb-6">
-                        <h4> Comentar: </h4>
-                        <input type="textarea" id="com" class="d-flex w-100 justify-content-between">
-                          </div>
-                
-                    </div>
                
 
                 <div class= "bg-image">
@@ -49,10 +39,12 @@ function display(product){
                 main{
                     background-image: url(${product.images[3]});
                     background-size: cover;
-                    border: solid lightblue 10px;
+                    
                 </style>
                 </div>
             </div>
+
+    
         `
       
         document.getElementById("prod").innerHTML = htmlContentToAppend;
