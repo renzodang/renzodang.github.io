@@ -27,7 +27,7 @@ function Showcom(array){
     <p>${oldcom.description}</p>
     <h6> ${oldcom.dateTime}<h6>
     <div>
-    <p>Puntaje: ${stars(oldcom.score)}</span><p>
+    <p>Puntaje: ${stars(oldcom.score)}<p>
 
   
     </div>

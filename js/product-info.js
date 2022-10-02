@@ -3,8 +3,11 @@ let article = [];
 let user = localStorage.getItem('user');
 let artID = localStorage.getItem("artID");
 
-
-
+function setArtID(id) {
+    localStorage.removeItem("artID")
+    localStorage.setItem("artID",id);
+    window.location = "product-info.html";
+};
 
 
 function display(product){
@@ -32,7 +35,7 @@ function display(product){
                         </div>
                         </div>
                         </div>
-               
+                      
 
                 <div class= "bg-image">
                 <style type = "text/css" media ="screen">
@@ -41,15 +44,47 @@ function display(product){
                     background-size: cover;
                     
                 </style>
+              
                 </div>
             </div>
+           
 
     
         `
       
-        document.getElementById("prod").innerHTML = htmlContentToAppend;
+        document.getElementById("prod").innerHTML = htmlContentToAppend; 
+};
+
+
+function relatedprod(products){
+   
+    let cont = "";
+    for(let product of products.relatedProducts ){ 
+      
        
-}
+        cont += `
+        <div class="container">
+        <div class="row">
+        <div class="col-sm">
+        
+        <div onclick="setArtID('${product.id}')" class=" "list-group-item "">
+
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${product.image}" alt="Card image cap">
+        <div class="card-body">
+          <pclass="card-text">${product.name}</p>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+           
+              
+        `}
+        document.getElementById("relatedprod").innerHTML = cont;
+        
+  }
+
 
 
 function login() {
@@ -63,6 +98,7 @@ function login() {
 
 
 
+
 document.addEventListener("DOMContentLoaded",()=> {
     
     getJSONData(PRODUCTS_INFO_URL+localStorage.getItem('artID')+".json").then(function(resultObj){
@@ -70,6 +106,8 @@ document.addEventListener("DOMContentLoaded",()=> {
         {
             article = resultObj.data;     
             display(article);
+            relatedprod(article);
+           
         } 
     });
 
