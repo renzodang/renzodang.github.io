@@ -9,10 +9,12 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/cart.css" rel="stylesheet">
+  <script src="js/cart.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+  <nav class="navbar navbar-expand-lg navbar-p-2 mb-1 bg-info text-info">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,21 +38,45 @@
     </div>
   </nav>
   <main>
+    
+    <h2 class="text-center text-info">Bienvenido a tu Carrito</h2>
+ 
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      
+      <table class="table-info>">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" class="text-center text-info">Precio</th>
+            <th scope="col"class="text-center text-info">Cantidad</th>
+            <th scope="col"class="text-center text-info">Subtotal</th>
+            
+          </tr>
+        </thead>
+        
+        <tbody id ="cart">
     </div>
+    <div>
+    <h2 class="text-info"> Tipo de Envío</h2>
+    <ul>
+      <liclass="text-info"> 2 a 5 Dias (%15)<input type="radio" name ="num"></li>
+      <li>Express:5 a 8 Días (7%)<input type="radio" name ="num"></li>
+      <li>Standard 12 a 15 Días(5%)<input type="radio" name ="num"></li>
+    </ul>
+    <br>
+    <h3 class="text-info"> Dirección de Envío</h3>
+
+    Calle<input type="text" class="col-form-label"> 
+    <br>
+    
+    
+    Número<input type="text" class="col-form-label"> 
+    <br>
+    Esquina<input type="text" class="col-form-label"> 
+  </div>
   </main>
   <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
-        2022</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
+ 
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -62,7 +88,7 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+ 
 </body>
 
 </html>

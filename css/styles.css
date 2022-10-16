@@ -185,6 +185,7 @@ footer p {
 
 main {
   min-height: calc(100vh - 210px);
+  margin-top: 50px;
 }
 
 a.custom-card,

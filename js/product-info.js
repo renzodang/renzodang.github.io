@@ -63,22 +63,24 @@ function relatedprod(products){
       
        
         cont += `
-        <div class="container">
+      
         <div class="row">
-        <div class="col-sm">
+        <div class="col-lg">
         
-        <div onclick="setArtID('${product.id}')" class=" "list-group-item "">
+        <div onclick="setArtID('${product.id}')" class=" "d-flex align-content-start flex-wrap">
 
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="${product.image}" alt="Card image cap">
+        <div class="card" style="width: 30rem;">
+        <h3 class="card-text">${product.name}</h3>
+        <img class="card-img" src="${product.image}" alt="Card image cap">
         <div class="card-body">
-          <pclass="card-text">${product.name}</p>
+          <p class="card-text"></p>
         </div>
+        
       </div>
       </div>
       </div>
-      </div>
-           
+    
+           <br>
               
         `}
         document.getElementById("relatedprod").innerHTML = cont;

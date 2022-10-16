@@ -8,6 +8,7 @@
 
 #comentar{
    margin-left: 10px;
+   block-size: 50px;
     
     
    
@@ -15,7 +16,7 @@
 }
 
 .card {
-   display: flex;
+
    margin: 200px;
    padding: 10px;
  
@@ -41,6 +42,7 @@ img {
     width: 200px;
     height: 200px;
     margin: 0 auto;
+   
   }
   
   img:hover {
