@@ -200,3 +200,25 @@ a.custom-card:hover {
 body {
   border: solid lightblue 3px;
 }
+img {
+  animation-duration: 0.6s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.navbar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+

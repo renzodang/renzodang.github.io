@@ -24,8 +24,8 @@ function display(array){
         let product = array[i];
         
         htmlContentToAppend += `
-        <div onclick="setArtID(${product.id})" class=" list-group-item-action cursor-active">
-            <div class="row">
+        <div  class=" list-group-item-action cursor-active">
+            <div class="row" onclick="setArtID(${product.id})">
                 <div class="col-3">
                 
                     <img src= " ${product.image}" alt="product image" class="img-thumbnail">
@@ -125,7 +125,7 @@ document.getElementById('sortAsc').addEventListener('click',()=>{
     SortByCostAsc(articles);
     display(articles);
 });
-document.getElementById('sortDesc').addEventListener('click',()=>{s
+document.getElementById('sortDesc').addEventListener('click',()=>{
     SortByCostDesc(articles);
     display(articles);
 });
